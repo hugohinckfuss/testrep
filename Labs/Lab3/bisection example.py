@@ -4,20 +4,23 @@ import numpy as np
 def driver():
 
 # use routines    
-    f = lambda x: np.sin(x)
-    a = 0.5
-    b = np.pi * 0.75
+    #f = lambda x: x**9-45*x**8+900*x**7-10500*x**6+78750*x**5-393750*x**4+1312500*x**3-2812500*x**2+3515625*x-1953125
+    f = lambda x: (x-5)**9
+    a = 4.82
+    b = 5.02
 
 #    f = lambda x: np.sin(x)
 #    a = 0.1
 #    b = np.pi+0.1
 
-    tol = 1e-5
+    tol = 1e-4
 
     [astar,ier] = bisection(f,a,b,tol)
     print('the approximate root is',astar)
     print('the error message reads:',ier)
     print('f(astar) =', f(astar))
+    print('f a is:', f(a))
+    print('f b is:', f(b))
 
 
 # define routines

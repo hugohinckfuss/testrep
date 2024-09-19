@@ -70,3 +70,11 @@ def compute_order(x, xstar):
      return fit
 
 driver()
+
+
+#Beginning Aitken's
+
+xn = 
+xn1 = x[1:-1]
+xn2 = x[2:]
+xhat = xn - ((xn1 - xn)**2/(xn2-2*xn1+xn))
