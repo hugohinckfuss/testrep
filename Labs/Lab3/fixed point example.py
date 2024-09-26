@@ -4,17 +4,17 @@ import numpy as np
 def driver():
 
 # test functions 
-     f1 = lambda x: (10/(x+4))**0.5
+     f1 = lambda x: -1*np.sin(2*x) + 1.25*x - 0.75
 # fixed point is alpha1 = 1.4987....
 
      #f2 = lambda x: 3+2*np.sin(x)
 #fixed point is alpha2 = 3.09... 
 
      Nmax = 100
-     tol = 1e-10
+     tol = 1e-11
 
 # test f1 '''
-     x0 = 1.5
+     x0 = np.pi/2
      [xstar,ier, x, count] = fixedpt(f1,x0,tol,Nmax)
      [alpha, _lambda] = compute_order(x, xstar)
      print('the approximate fixed point is:',xstar)
