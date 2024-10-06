@@ -1,18 +1,20 @@
 # import libraries
 import numpy as np
+from scipy.special import erf
 
 def driver():
 
 # use routines    
-    f = lambda x: x**3+x-4
-    a = 1
-    b = 4
+    beta = 5184000*(0.138*10**(-6))
+    f = lambda x: (35)*erf(x/(2*np.sqrt(beta))) - 15
+    a = 0
+    b = 10
 
 #    f = lambda x: np.sin(x)
 #    a = 0.1
 #    b = np.pi+0.1
 
-    tol = 1e-3
+    tol = 1e-13
 
     [astar,ier] = bisection(f,a,b,tol)
     print('the approximate root is',astar)
